@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    
+
+    <div style="justify-content: center; align-items: center; display: flex; flex-direction: column; height:400px;">
+        <h1 for="user-number">Enter a number </h1>
+    <input type="text" id="user-number" style="width: 200px;">
+    <br>
+    <button onclick="reverseNumber()" style="width: 205px;">Reverse</button>
+    <h2 id="result"></h2>
+    </div>
+    
+
+    <script>
+        function reverse(num){
+            let temp=0;
+            let rem;
+            while(num>0){
+                rem=num%10;
+                temp=temp*10+rem;
+                num=Math.floor(num/10);
+            }
+            return temp;
+        }
+
+        function reverseNumber(){
+            let val=parseInt(document.getElementById("user-number").value);
+            let res=reverse(val);
+            document.getElementById("result").innerText="Result Number : "+res;
+        }
+
+    </script>
+</body>
+</html>
